@@ -1,0 +1,3 @@
+-En OK løsning som presenterer det ønskelige resultatet. Usikker på valg av oppbevaringalgoritme ,
+-da en ArrayList er en super måte å lagre data på, men ikke til å gjøre søk i.
+-En Hashmap hadde kanskje vært å foretrekke, da den har en Average O(1) og en worst case på O(n).
