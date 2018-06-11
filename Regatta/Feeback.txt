@@ -1,0 +1,9 @@
+Kommentarer:
+Meg og Mats Skjærvik har sammarbeidet, og har derfor en del likheter i koden.
+Nils Fredrik Iselvmo Bjerk, 26 mar i 0:02
+Hei Nils og Mats, Jeg dro litt linjer mot meg og Erlend Wiklems prosjekt i fjor,
+vet ikke om dere har tatt inspirasjon derfra, om dere gjorde; er vanlig prosedyre og skrive inspirasjonskilde.
+En OK løsning som presenterer det ønskelige resultatet. Usikker på valg av oppbevaringalgoritme ,
+da en ArrayList er en super måte å lagre data på, men ikke til å gjøre søk i.
+En Hashmap hadde kanskje vært å foretrekke, da den har en Average O(1) og en worst case på O(n). Ellers flott arbeid!
+Christian Moen, 9 apr i 16:57
