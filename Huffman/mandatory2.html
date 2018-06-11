@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>IS-211 Mandatory 2</title>
+      <meta charset="UTF8"/>
+      <style type="text/css">
+body {
+  border: thin solid black;
+  margin: auto;
+  padding: 25px;
+  padding-top: 0;
+  font-size: 12pt;
+  width: 75ex;  
+}
+
+h1, h2, h3 {
+  padding-top: 1em;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+table.plain {
+  border-width : thin;
+  border-style : solid;
+  border-collapse : collapse;
+  border-color : black;
+}
+table.plain td,
+table.plain th {
+  border-width : thin;
+  border-style : solid;
+  vertical-align : top;
+  padding : 3px;
+}            
+        </style>
+    </head>
+    <body>
+      <h1>IS-211 Mandatory Exercise 2</h1>  
+      <h3>Purpose</h3>
+      <p>Learn how to use huffman encoding, which is a very good way of
+      compressing text files.</p>
+      <p>In addition you will gain some experience with manipulating
+      binary trees.</p>
+      <h3>Theory</h3>
+      <p>The huffman encoding is the optimal compression method if you
+      need to encode each character individually. It goes like this:</p>
+      <ol>
+      <li>Count the number of occurences of each character in the text.
+      The character and count should be recorded in a Node object.</li>
+      <li>Add all nodes to a priority queue, which must be ordered ascending 
+        by count</li>
+      <li>While the queue contains more than one node:
+      <ol>
+      <li>Take the two nodes with lowest count off the front of the queue.</li>
+       <li>Create a new node, and make the two nodes from the queue its
+       children</li>
+        <li>Set the count value of the new node to the sum of it's children</li>       
+        <li>Add the new node to the queue.</li>
+       </ol>
+        When there is only a single node left, it is the root of your huffman
+        tree.
+      </li>
+        <li>Traverse the three to find the code for each character. When you
+        find a leaf node, the code for the character represented by the
+        node can be determined by the path to the node. Going left means a
+        zero, and going right represents a one.</li>
+        <li>When you have determined the code for a character, you should
+        add the character and it's node to a lookup table.</li>
+      </ol>
+      
+      <p>To encode a text, you get the characters from the text one by one,
+        find their code in the lookup table and write the code to the output.</p>
+      <p>To decode the text again, you start in the root noe, and read 
+        single bits from the encoded text, moving left or right  depending on
+        the bit value. When you reach a leaf node, you have read the complete
+        code for the node's character, and can write the character to the
+        output.</p>
+      <h3>Task</h3>
+      <p>The accompanying programming project (huffman.zip) contains the
+      foundations of an implementation of huffman encoding. The project
+      contains three categories of classes:</p>
+      <dl>
+      <dt>BitSink</dt>
+      <dd>BitSinks are objects that can receive single bits (that is ones
+      or zeros). They are necessary when you want to write individual bits
+      to a file, which you must do when huffman encoding data. If you write
+      bits to a FileBitSink, the bits will eventually end up in a file.
+      The StringBitSink is similar, except the bits are appended to a string
+      of '0' and '1' characters, to make debugging easier.</dd>
+      <dt>BitSource</dt>
+      <dd>BitSources are the opposite of BitSinks. They allow reading
+      single bits from a file (FileBitSource) or a string (StringBitSource)
+      </dd>
+      <dt>HuffmanCodec</dt>
+      <dd>This is just a skeleton. Your task is to complete this class.
+      Comments in HuffmanCodec.java, and Main.java will tell you what to do
+      .</dd>
+      </dl>
+      <p>In addition there are a couple of test files: terjevigen.txt contains
+      the full text of the poem Terje Vigen, and tv1.txt contains just the
+      first line.</p>
+            
+      <h2>Deadline</h2>
+      <p>Thursday 26 February, before the lecture</p>
+    </body>
+</html>

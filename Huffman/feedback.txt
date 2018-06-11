@@ -1,0 +1,3 @@
+Kommentarer:
+Helt grei besvarelse. Skulle nok ønsket at du fulgte oppskriften, istedet for å endre fra array til String i traverse. Oppgaven er godkjent.
+Christian Moen, 27 feb i 18:38
